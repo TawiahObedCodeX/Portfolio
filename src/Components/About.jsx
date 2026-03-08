@@ -175,18 +175,7 @@ export default function About() {
               </motion.ul>
             </motion.div>
 
-            {/* Teaching / Mentorship */}
-            <motion.div variants={fadeInUp} className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
-              <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-6">
-                Teaching & Mentorship
-              </h3>
-              <p className="text-base sm:text-lg text-white/75 leading-8">
-                I regularly create in-depth tutorials, courses, and live coding sessions covering the full development lifecycle — from wireframing and design systems to building production-ready web and mobile applications.
-              </p>
-              <p className="mt-4 text-base sm:text-lg text-white/75 leading-8">
-                My teaching style focuses on <strong>real-world projects</strong>, clean architecture, testing, and preparing developers for modern job requirements.
-              </p>
-            </motion.div>
+
           </motion.div>
         </div>
 
