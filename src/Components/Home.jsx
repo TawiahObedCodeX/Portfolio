@@ -52,6 +52,7 @@ export default function Home({ initialSection = 'about' }) {
     if (newIndex === activeIndex) return;
     setDirection(newIndex > activeIndex ? 1 : -1);
     setActiveIndex(newIndex);
+
     navigate(sections[newIndex].path);
   };
 
@@ -68,6 +69,7 @@ export default function Home({ initialSection = 'about' }) {
   // Keyboard navigation (desktop only)
   useEffect(() => {
     if (isMobile) return;
+
     const handleKey = (e) => {
       if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
         e.preventDefault();
@@ -110,7 +112,7 @@ export default function Home({ initialSection = 'about' }) {
                 {section.label}
               </span>
               <motion.div
-                className="absolute left-1/2 -bottom-1 h-0.5 w-5 xs:w-6 sm:w-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full -translate-x-1/2"
+                className="absolute left-1/2 -bottom-1 h-0.5 w-5 xs:w-6 sm:w-8 bg-linear-to-r from-purple-500 to-cyan-500 rounded-full -translate-x-1/2"
                 initial={false}
                 animate={{ scale: activeIndex === i ? 1 : 0 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 30 }}

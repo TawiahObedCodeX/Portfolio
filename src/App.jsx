@@ -42,17 +42,17 @@ function LandingPage({ onEnter }) {
                 alt="Portfolio Mockup"
                 className="w-full h-auto object-contain drop-shadow-2xl"
               />
-              {/* Enter Button */}
+                {/* Enter Button */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <motion.button
-                  onClick={onEnter}
-                  className="pointer-events-auto bg-white text-black font-bold py-4 px-10 sm:py-5 sm:px-12 md:py-6 md:px-16 rounded-full text-xl sm:text-2xl md:text-3xl shadow-2xl hover:shadow-purple-600/60 hover:scale-105 transition-all duration-500 border-4 border-white/30 backdrop-blur-lg"
-                  whileHover={{ y: -8, boxShadow: "0 0 60px rgba(168, 85, 247, 0.7)" }}
-                  whileTap={{ scale: 0.96 }}
-                >
-                  Enter Portfolio
-                </motion.button>
-              </div>
+                  <motion.button
+                    onClick={onEnter}
+                    className="pointer-events-auto bg-white text-black font-bold py-4 px-10 sm:py-5 sm:px-12 md:py-6 md:px-16 rounded-full text-xl sm:text-2xl md:text-3xl shadow-2xl hover:shadow-purple-600/60 hover:scale-105 transition-all duration-500 border-4 border-white/30 backdrop-blur-lg"
+                    whileHover={{ y: -8, boxShadow: "0 0 60px rgba(168, 85, 247, 0.7)" }}
+                    whileTap={{ scale: 0.96 }}
+                  >
+                    Enter Portfolio
+                  </motion.button>
+                </div>
             </div>
           </motion.div>
         </div>
@@ -71,7 +71,7 @@ function AppContent() {
   return (
     <div className="fixed inset-0 bg-black text-white overflow-hidden font-['Inter']">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br from-purple-900/20 via-black to-cyan-900/20 pointer-events-none" />
       {/* Floating Particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {[...Array(12)].map((_, i) => (
