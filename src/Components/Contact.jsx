@@ -8,37 +8,37 @@ export default function Contact() {
   const socialLinks = [
     {
       name: 'GitHub',
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/',
       icon: <FaGithub className="text-2xl" />,
       color: 'hover:text-gray-300',
     },
-    {
-      name: 'LinkedIn',
-      href: 'https://linkedin.com/in/yourusername',
-      icon: <FaLinkedinIn className="text-2xl" />,
-      color: 'hover:text-blue-500',
-    },
-    {
-      name: 'X (Twitter)',
-      href: 'https://x.com/yourusername',
-      icon: <FaTwitter className="text-2xl" />,
-      color: 'hover:text-sky-500',
-    },
-    {
-      name: 'TikTok',
-      href: 'https://tiktok.com/@yourusername',
-      icon: <FaTiktok className="text-2xl" />,
-      color: 'hover:text-pink-500',
-    },
-    {
-      name: 'Telegram',
-      href: 'https://t.me/yourusername',
-      icon: <FaTelegramPlane className="text-2xl" />,
-      color: 'hover:text-blue-400',
-    },
+    // {
+    //   name: 'LinkedIn',
+    //   href: 'https://www.linkedin.com/in/tawiah-obed-73941a3ab?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
+    //   icon: <FaLinkedinIn className="text-2xl" />,
+    //   color: 'hover:text-blue-500',
+    // },
+    // {
+    //   name: 'X (Twitter)',
+    //   href: 'https://x.com/yourusername',
+    //   icon: <FaTwitter className="text-2xl" />,
+    //   color: 'hover:text-sky-500',
+    // },
+    // {
+    //   name: 'TikTok',
+    //   href: 'https://tiktok.com/@yourusername',
+    //   icon: <FaTiktok className="text-2xl" />,
+    //   color: 'hover:text-pink-500',
+    // },
+    // {
+    //   name: 'Telegram',
+    //   href: 'https://t.me/yourusername',
+    //   icon: <FaTelegramPlane className="text-2xl" />,
+    //   color: 'hover:text-blue-400',
+    // },
     {
       name: 'WhatsApp',
-      href: 'https://wa.me/1234567890', // Replace with your number (international format)
+      href: 'https://wa.me/0539526814', // Replace with your number (international format)
       icon: <FaWhatsapp className="text-2xl" />,
       color: 'hover:text-green-500',
     },
