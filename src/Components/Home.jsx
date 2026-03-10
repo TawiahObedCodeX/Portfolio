@@ -6,11 +6,13 @@ import About from './About';
 import Skills from './Skills';
 import Project from './Project';
 import Contact from './Contact';
+import Cv from './Cv';
 
 const sections = [
   { id: 'about',    label: 'About',    path: '/about',    component: <About /> },
   { id: 'skills',   label: 'Skills',   path: '/skills',   component: <Skills /> },
   { id: 'projects', label: 'Projects', path: '/projects', component: <Project /> },
+  { id: 'cv',       label: 'CV',       path: '/cv',       component: <Cv /> },
   { id: 'contact',  label: 'Contact',  path: '/contact',  component: <Contact /> },
 ];
 
@@ -87,39 +89,81 @@ export default function Home({ initialSection = 'about' }) {
     <div className="relative min-h-screen w-full bg-black text-white font-['Inter']">
       {/* Navigation */}
       <motion.nav
-        initial={{ y: isMobile ? 100 : -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        initial={{ y: isMobile ? 100 : -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed z-50 ${
           isMobile
-            ? 'bottom-0 left-0 right-0 bg-black/90 backdrop-blur-lg border-t border-white/10 py-3 px-3 xs:px-4'
-            : 'top-0 left-0 right-0 bg-black/80 backdrop-blur-lg border-b border-white/10 py-4 px-6'
-        }`}
+            ? 'bottom-0 left-0 right-0'
+            : 'top-0 left-0 right-0'
+        } bg-[#050308]/95 border-b border-[#17121a]`}
       >
-        <div className="flex items-center justify-center gap-1.5 xs:gap-3 sm:gap-6 md:gap-10 max-w-7xl mx-auto">
-          {sections.map((section, i) => (
-            <Link
-              key={section.id}
-              to={section.path}
-              onClick={() => changeSection(i)}
-              className="relative group px-2 py-1.5 xs:px-3 sm:px-4 touch-manipulation focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-lg"
-            >
-              <span
-                className={`text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-semibold uppercase tracking-wider transition-colors ${
-                  activeIndex === i ? 'text-white' : 'text-white/60 group-hover:text-white'
-                }`}
+        {/* Desktop / tablet */}
+        {!isMobile && (
+          <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4 sm:px-8 py-3">
+            <div className="flex items-center gap-2 sm:gap-3">
+            </div>
+
+            <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
+              {sections.map((section, i) => (
+                <Link
+                  key={section.id}
+                  to={section.path}
+                  onClick={() => changeSection(i)}
+                  className="relative px-2 py-1.5 sm:px-3 md:px-4 rounded-full text-xs sm:text-sm md:text-base font-medium uppercase tracking-[0.16em] transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/70"
+                >
+                  <span
+                    className={
+                      activeIndex === i
+                        ? 'text-white'
+                        : 'text-neutral-400 hover:text-white'
+                    }
+                  >
+                    {section.label}
+                  </span>
+                  {activeIndex === i && (
+                    <div className="absolute left-1/2 -bottom-1 h-[2px] w-6 -translate-x-1/2 rounded-full bg-purple-500" />
+                  )}
+                </Link>
+              ))}
+
+              <button
+                type="button"
+                onClick={() => {
+                  const contactIndex = sections.findIndex((s) => s.id === 'contact');
+                  if (contactIndex >= 0) changeSection(contactIndex);
+                }}
+                className="hidden sm:inline-flex items-center rounded-full bg-cyan-300 px-4 sm:px-5 py-1.5 text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-black hover:bg-cyan-200 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-300/70"
               >
-                {section.label}
-              </span>
-              <motion.div
-                className="absolute left-1/2 -bottom-1 h-0.5 w-5 xs:w-6 sm:w-8 bg-linear-to-r from-purple-500 to-cyan-500 rounded-full -translate-x-1/2"
-                initial={false}
-                animate={{ scale: activeIndex === i ? 1 : 0 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-              />
-            </Link>
-          ))}
-        </div>
+                Download
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Mobile */}
+        {isMobile && (
+          <div className="mx-auto flex w-full max-w-md items-center justify-between px-3 py-2">
+            {sections.map((section, i) => (
+              <Link
+                key={section.id}
+                to={section.path}
+                onClick={() => changeSection(i)}
+                className="flex-1 rounded-full px-2 py-1 text-center text-[0.65rem] xs:text-[0.7rem] font-semibold uppercase tracking-[0.16em] focus:outline-none focus:ring-2 focus:ring-purple-500/70"
+              >
+                <span
+                  className={
+                    activeIndex === i
+                      ? 'inline-block rounded-full bg-purple-500 px-2 py-0.5 text-white'
+                      : 'text-neutral-400'
+                  }
+                >
+                  {section.label}
+                </span>
+              </Link>
+            ))}
+          </div>
+        )}
       </motion.nav>
 
       {/* Main Content */}

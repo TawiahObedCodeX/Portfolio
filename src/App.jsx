@@ -139,6 +139,7 @@ function AppContent() {
               <Route path="/about" element={<Home initialSection="about" />} />
               <Route path="/skills" element={<Home initialSection="skills" />} />
               <Route path="/projects" element={<Home initialSection="projects" />} />
+              <Route path="/cv" element={<Home initialSection="cv" />} />
               <Route path="/contact" element={<Home initialSection="contact" />} />
             </Routes>
           </motion.div>
