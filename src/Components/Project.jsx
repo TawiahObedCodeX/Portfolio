@@ -67,7 +67,7 @@ const projects = [
     screenshot: 'https://i.pinimg.com/1200x/03/42/15/0342152dc7068df42f9eb386ed193b72.jpg',
     tech: ['React', 'Node.js', 'MongoDB'],
     category: 'Full Stack',
-    liveLink: 'https://lustrous-rolypoly-7a6031.netlify.app/',
+    liveLink: 'https://ecommerce-for-spices.vercel.app/',
     githubLink: 'https://github.com/codeob/E-commerce.git',
   },
   {
