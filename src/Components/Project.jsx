@@ -130,7 +130,7 @@ const Project = () => {
           animate="visible"
           whileHover={{ scale: 1.04, y: -8 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-          className="group relative bg-gradient-to-b from-gray-900/80 to-black/80 rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm shadow-xl"
+          className="group relative bg-linear-to-b from-gray-900/80 to-black/80 rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm shadow-xl"
         >
           <div className="relative aspect-video overflow-hidden">
             <img
@@ -138,7 +138,7 @@ const Project = () => {
               alt={project.title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
           </div>
 
           <div className="p-6">
