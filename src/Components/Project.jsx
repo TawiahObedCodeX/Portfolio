@@ -78,7 +78,7 @@ const projects = [
     screenshot: 'https://i.pinimg.com/1200x/6c/f7/1a/6cf71a421154d71781e2b6ea62a0a485.jpg',
     tech: ['React', 'Tailwind'],
     category: 'Frontend',
-    liveLink: 'https://startling-speculoos-5080dd.netlify.app/',
+    liveLink: 'https://ecommerce-for-spices.vercel.app/',
     githubLink: 'https://github.com/codeob/Spices-product.git',
   },
   {
